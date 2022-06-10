@@ -16,3 +16,12 @@ class Task(models.Model):
 
     def __str__(self):
         return self.title
+
+
+class Message(models.Model):
+    created_at = models.DateTimeField(auto_created=True)
+    update_at = models.DateTimeField(auto_now=True)
+    content = models.TextField(max_length=1000)
+
+    def __str__(self):
+        return self.content
